@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { baseImgURL } from "../endpoints";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import "../CSS/rows.css";
 
 function Rows({ title, content }) {
   const contentContainer = useRef();

@@ -1,7 +1,6 @@
 import Rows from "./Rows";
 import { useEffect, useState } from "react";
 import { caller, baseImgURL, endpoints } from "../endpoints";
-import "../CSS/recommendation.css";
 
 function Recommendation() {
   let [trending, setTrending] = useState([]);
