@@ -3,6 +3,7 @@
   justify-content: center;
   /* background: greenyellow; */
   grid-template-columns: repeat(auto-fit, 230px);
+  position: relative;
 }
 
 .searchedImg {
@@ -10,9 +11,12 @@
 
   height: 300px;
   border-radius: 20px;
-  background-color: orange;
+
   overflow: hidden;
   transition: 0.5s ease;
+  box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.5);
 }
 
 .searchedImg img {
@@ -32,6 +36,11 @@
   left: 10px;
   cursor: pointer;
   z-index: 5;
+}
+.nothing {
+  position: absolute;
+  margin: 50px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 576px) {

@@ -10,8 +10,9 @@ function SearchRes() {
   let dispatch = useDispatch();
   return (
     <div className="searchRes">
-      {isMovies
-        ? movieRes.map((movie) => {
+      {isMovies ? (
+        movieRes.length !== 0 ? (
+          movieRes.map((movie) => {
             if (movie.poster_path !== null) {
               return (
                 <div className="searchedImg">
@@ -23,19 +24,22 @@ function SearchRes() {
               );
             }
           })
-        : isTV &&
-          tvRes.map((tv) => {
-            if (tv.poster_path !== null) {
-              return (
-                <div className="searchedImg">
-                  <img
-                    src={baseImgURL + tv.poster_path}
-                    alt={tv.original_name}
-                  />
-                </div>
-              );
-            }
-          })}
+        ) : (
+          <h1 className="nothing">Nothing found! Try different keywords</h1>
+        )
+      ) : isTV && tvRes.length !== 0 ? (
+        tvRes.map((tv) => {
+          if (tv.poster_path !== null) {
+            return (
+              <div className="searchedImg">
+                <img src={baseImgURL + tv.poster_path} alt={tv.original_name} />
+              </div>
+            );
+          }
+        })
+      ) : (
+        <h1 className="nothing">Nothing found! Try different keywords</h1>
+      )}
       <div
         onClick={() => {
           dispatch({ type: "isSearched", payload: false });

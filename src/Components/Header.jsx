@@ -23,9 +23,6 @@ function Header() {
   function search(e) {
     let searchQuery = e.target.value;
     if (e.keyCode === 13 && searchQuery !== "") {
-      console.log(searchQuery);
-      console.log(search_category);
-
       dispatch({
         type: "isSearched",
         payload: true,
@@ -34,13 +31,11 @@ function Header() {
       switch (search_category) {
         case "Movies":
           caller.get(endpoints.searchMovie + searchQuery).then((res) => {
-            console.log(res.data.results);
             dispatch({ type: "setMovieRes", payload: res.data.results });
           });
           break;
         case "TV Shows":
           caller.get(endpoints.searchTV + searchQuery).then((res) => {
-            console.log(res.data.results);
             dispatch({ type: "setTvRes", payload: res.data.results });
           });
           break;
