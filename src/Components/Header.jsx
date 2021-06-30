@@ -9,6 +9,7 @@ function Header() {
   let dispatch = useDispatch();
   let dropDownList = useRef();
   let dropDownBtn = useRef();
+  let searchBar = useRef();
 
   function toggleDropDown() {
     dropDownList.current.classList.toggle("dropDownClicked");
@@ -42,6 +43,7 @@ function Header() {
         default:
           window.alert("something went wrong!");
       }
+      searchBar.current.value = "";
     }
   }
 
@@ -60,6 +62,7 @@ function Header() {
     <header className="header">
       <div className="searchContainer">
         <input
+          ref={searchBar}
           onKeyDown={search}
           type="text"
           className="search"
