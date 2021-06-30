@@ -5,12 +5,16 @@ import "./CSS/app.css";
 import { endpoints, baseImgURL } from "./endpoints";
 import Header from "./Components/Header";
 import Recommendation from "./Components/Recommendation";
-
-//89440096b2b595752186edca36579ff1
-// const API_KEY = "89440096b2b595752186edca36579ff1";
-// const baseImgURL = "https://image.tmdb.org/t/p/original";
+import { useSelector } from "react-redux";
+import SearchRes from "./Components/SearchRes";
 
 function App() {
+  let { isSearched } = useSelector((state) => state);
+
+  useEffect(() => {
+    console.log(isSearched);
+  }, [isSearched]);
+
   return (
     <div className="App">
       {/* {movieArr.map((movie) => (
@@ -22,7 +26,7 @@ function App() {
       ))} */}
       <div className="trailerShow">
         <Header />
-        <Recommendation />
+        {!isSearched ? <Recommendation /> : <SearchRes />}
       </div>
     </div>
   );

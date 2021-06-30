@@ -39,7 +39,7 @@ function Rows({ title, content }) {
         <div ref={contentContainer} className="content">
           {content.map((movie) => {
             return (
-              <div className="movie">
+              <div key={movie.id} className="movie">
                 {/* <h3>{movie.original_title || movie.original_name}</h3> */}
                 <div className="poster">
                   <img

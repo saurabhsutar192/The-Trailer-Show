@@ -1,0 +1,49 @@
+.searchRes {
+  display: grid;
+  justify-content: center;
+  /* background: greenyellow; */
+  grid-template-columns: repeat(auto-fit, 230px);
+}
+
+.searchedImg {
+  margin: 15px;
+
+  height: 300px;
+  border-radius: 20px;
+  background-color: orange;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.searchedImg img {
+  height: inherit;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.searchedImg:hover {
+  transform: scale(0.9);
+}
+.homeBtn {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+@media screen and (max-width: 576px) {
+  .searchRes {
+    grid-template-columns: repeat(auto-fit, 120px);
+  }
+  .searchedImg {
+    height: 180px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  .searchedImg img {
+    border-radius: 10px;
+  }
+}

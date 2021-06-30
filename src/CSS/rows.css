@@ -52,3 +52,16 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+
+@media screen and (max-width: 576px) {
+  .poster img {
+    height: 150px;
+    border-radius: 10px;
+  }
+  .rowTitle {
+    font-size: 20px;
+  }
+  .rows {
+    padding: 0px;
+  }
+}

@@ -6,9 +6,9 @@ const baseImgURL = "https://image.tmdb.org/t/p/original";
 const caller = axios.create({ baseURL: "https://api.themoviedb.org/3/" });
 
 const endpoints = {
-  searchMovie: `search/movie?api_key=${API_KEY}`,
-  searchTV: `search/tv?api_key=${API_KEY}`,
-  searchPeople: `search/person?api_key=${API_KEY}`,
+  searchMovie: `search/movie?api_key=${API_KEY}&query=`,
+  searchTV: `search/tv?api_key=${API_KEY}&query=`,
+  searchPeople: `search/person?api_key=${API_KEY}&query=`,
   fetchTrending: `trending/all/week?api_key=${API_KEY}`,
   fetchTV: `discover/tv?api_key=${API_KEY}`,
   fetchActionMovies: `discover/movie?api_key=${API_KEY}&with_genres=28`,
