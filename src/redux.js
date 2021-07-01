@@ -6,12 +6,15 @@ let initialState = {
   isTV: false,
   movieRes: [],
   tvRes: [],
+  videoId: null,
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "isSearched":
       return { ...state, isSearched: action.payload };
+    case "setVideoId":
+      return { ...state, videoId: action.payload };
 
     case "setMovieRes":
       return {

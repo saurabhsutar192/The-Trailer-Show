@@ -3,7 +3,6 @@
   justify-content: center;
   /* background: greenyellow; */
   grid-template-columns: repeat(auto-fit, 230px);
-  position: relative;
 }
 
 .searchedImg {

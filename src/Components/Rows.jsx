@@ -1,11 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { baseImgURL } from "../endpoints";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import "../CSS/rows.css";
 
+import handleTrailer from "../handleTrailer";
+import Trailer from "./Trailer";
+
 function Rows({ title, content }) {
   const contentContainer = useRef();
+  let [videoId, setVideoId] = useState("");
+  let [clicked, setClicked] = useState(false);
 
   function scrollBack() {
     sideScroll(contentContainer.current, "left", 1, 500, 10);
@@ -39,8 +44,13 @@ function Rows({ title, content }) {
         <div ref={contentContainer} className="content">
           {content.map((movie) => {
             return (
-              <div key={movie.id} className="movie">
-                {/* <h3>{movie.original_title || movie.original_name}</h3> */}
+              <div
+                key={movie.id}
+                onClick={() => {
+                  handleTrailer(movie.id, setVideoId, setClicked);
+                }}
+                className="movie"
+              >
                 <div className="poster">
                   <img
                     src={baseImgURL + movie.poster_path}
@@ -55,6 +65,7 @@ function Rows({ title, content }) {
           <NavigateNextIcon fontSize="large" />
         </div>
       </div>
+      {clicked && <Trailer setClicked={setClicked} videoId={videoId} />}
     </div>
   );
 }

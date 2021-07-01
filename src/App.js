@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Movie from "./Components/Movie";
+import { useEffect } from "react";
+
 import "./CSS/app.css";
-import { endpoints, baseImgURL } from "./endpoints";
+import "./CSS/youtube.css";
 import Header from "./Components/Header";
 import Recommendation from "./Components/Recommendation";
 import { useSelector } from "react-redux";
@@ -17,13 +16,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* {movieArr.map((movie) => (
-        <Movie
-          title={movie.original_name || movie.original_title}
-          img={`${baseImgURL}${movie?.poster_path}`}
-          desc={movie.overview}
-        />
-      ))} */}
       <div className="trailerShow">
         <Header />
         {!isSearched ? <Recommendation /> : <SearchRes />}

@@ -37,6 +37,7 @@ function Header() {
           break;
         case "TV Shows":
           caller.get(endpoints.searchTV + searchQuery).then((res) => {
+            console.log(res.data.results);
             dispatch({ type: "setTvRes", payload: res.data.results });
           });
           break;
