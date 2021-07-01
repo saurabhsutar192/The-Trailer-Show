@@ -32,6 +32,7 @@ function Header() {
       switch (search_category) {
         case "Movies":
           caller.get(endpoints.searchMovie + searchQuery).then((res) => {
+            console.log(res.data.results);
             dispatch({ type: "setMovieRes", payload: res.data.results });
           });
           break;

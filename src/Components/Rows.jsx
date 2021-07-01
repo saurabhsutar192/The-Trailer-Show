@@ -47,7 +47,7 @@ function Rows({ title, content }) {
               <div
                 key={movie.id}
                 onClick={() => {
-                  handleTrailer(movie.id, setVideoId, setClicked);
+                  handleTrailer(movie.id, setVideoId, setClicked, movie.title);
                 }}
                 className="movie"
               >

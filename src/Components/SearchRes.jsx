@@ -30,7 +30,12 @@ function SearchRes() {
               return (
                 <div
                   onClick={() => {
-                    handleTrailer(movie.id, setVideoId, setClicked);
+                    handleTrailer(
+                      movie.id,
+                      setVideoId,
+                      setClicked,
+                      movie.title
+                    );
                   }}
                   key={movie.id}
                   className="searchedImg"
@@ -52,7 +57,7 @@ function SearchRes() {
             return (
               <div
                 onClick={() => {
-                  handleTrailer(tv.id);
+                  handleTrailer(tv.id, setVideoId, setClicked, tv.title);
                 }}
                 key={tv.id}
                 className="searchedImg"

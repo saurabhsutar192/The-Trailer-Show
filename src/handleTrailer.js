@@ -1,8 +1,8 @@
 import * as trailer from "movie-trailer";
 
-function handleTrailer(id, setVideoId, setClicked) {
+function handleTrailer(id, setVideoId, setClicked, title) {
   trailer(null, { tmdbId: id }).then((res) => {
-    if (res) {
+    if (res && title) {
       let urlId = new URLSearchParams(new URL(res).search);
       setVideoId(urlId?.get("v"));
 
