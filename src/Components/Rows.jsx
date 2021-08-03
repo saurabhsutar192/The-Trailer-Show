@@ -22,7 +22,7 @@ function Rows({ title, content }) {
   function sideScroll(element, direction, speed, distance, step) {
     let scrollAmount = 0;
     let slideTimer = setInterval(function () {
-      if (direction == "left") {
+      if (direction === "left") {
         element.scrollLeft -= step;
       } else {
         element.scrollLeft += step;

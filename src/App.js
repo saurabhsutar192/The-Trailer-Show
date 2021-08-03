@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 import "./CSS/app.css";
 import "./CSS/youtube.css";
@@ -10,9 +9,7 @@ import SearchRes from "./Components/SearchRes";
 function App() {
   let { isSearched } = useSelector((state) => state);
 
-  useEffect(() => {
-    console.log(isSearched);
-  }, [isSearched]);
+
 
   return (
     <div className="App">
